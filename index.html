@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jairo Neri — Portfólio de Copywriting</title>
+<meta name="description" content="Portfólio de copywriting e estratégia de conteúdo de Jairo Neri.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0A0C10;
+  --s1: #12151C;
+  --s2: #1A1E28;
+  --s3: #222736;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.14);
+  --text: #E8EBF2;
+  --muted: #6B7280;
+  --muted2: #9CA3AF;
+  --accent: #E8622A;
+  --accent2: #FF8C5A;
+  --accent-bg: rgba(232,98,42,0.1);
+  --accent-border: rgba(232,98,42,0.25);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* BG DOTS */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* GLOW */
+.glow {
+  position: fixed; top: -300px; left: 50%;
+  transform: translateX(-50%);
+  width: 700px; height: 500px;
+  background: radial-gradient(ellipse, rgba(232,98,42,0.07) 0%, transparent 65%);
+  pointer-events: none; z-index: 0;
+}
+
+.wrap { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+/* HEADER */
+header {
+  position: relative; z-index: 1;
+  padding: 64px 0 0;
+}
+.header-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 40px;
+}
+.hero-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 3px;
+  color: var(--accent); text-transform: uppercase;
+  margin-bottom: 20px; display: block;
+}
+.hero-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(72px, 12vw, 130px);
+  line-height: 0.9; letter-spacing: 2px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.hero-name .line2 {
+  color: var(--accent);
+  display: block;
+  letter-spacing: 0.12em;
+}
+.hero-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px; letter-spacing: 1px;
+  color: var(--muted2);
+  margin-bottom: 28px;
+  padding-left: 3px;
+}
+.hero-desc {
+  font-size: 16px; line-height: 1.75;
+  color: var(--muted2);
+  max-width: 500px;
+  margin-bottom: 32px;
+}
+.hero-tags {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+.htag {
+  padding: 5px 14px; border-radius: 100px;
+  border: 1px solid var(--border2);
+  font-size: 12px; color: var(--muted2);
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.5px;
+  transition: all 0.15s;
+}
+.htag:hover { border-color: var(--accent); color: var(--accent); }
+.hero-contact {
+  display: flex; flex-direction: column; gap: 8px;
+  font-size: 13px;
+  font-family: 'DM Mono', monospace;
+  color: var(--muted);
+}
+.hero-contact a {
+  color: var(--accent2); text-decoration: none;
+  transition: color 0.15s;
+}
+.hero-contact a:hover { color: var(--accent); }
+
+/* THE 13 */
+.hero-number {
+  display: flex; flex-direction: column;
+  align-items: flex-end; padding-top: 12px;
+}
+.num-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(100px, 16vw, 180px);
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -2px;
+  text-shadow: 0 0 60px rgba(232,98,42,0.3);
+}
+.num-sep {
+  width: 3px; height: 48px;
+  background: var(--accent);
+  margin-left: auto; margin-bottom: 8px;
+}
+.num-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 2px;
+  color: var(--muted); text-transform: uppercase;
+  text-align: right;
+}
+
+/* DIVIDER */
+.section-div {
+  display: flex; align-items: center; gap: 16px;
+  margin: 56px 0 32px;
+}
+.div-line { flex: 1; height: 1px; background: var(--border2); }
+.div-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 2.5px;
+  color: var(--muted); text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* BOOK CARD */
+.book-card {
+  background: var(--s1);
+  border: 1px solid var(--border2);
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex; align-items: center;
+  gap: 24px; flex-wrap: wrap;
+  border-left: 3px solid var(--accent);
+  margin-bottom: 56px;
+}
+.book-icon {
+  width: 56px; height: 56px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 12px;
+  display: flex; align-items: center;
+  justify-content: center; font-size: 24px;
+  flex-shrink: 0;
+}
+.book-info { flex: 1; min-width: 200px; }
+.book-lbl {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 2px;
+  color: var(--accent); text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.book-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px; letter-spacing: 1px;
+  color: var(--text); margin-bottom: 4px;
+}
+.book-desc { font-size: 13px; color: var(--muted2); }
+.book-btn {
+  padding: 11px 22px; border-radius: 8px;
+  background: var(--accent); color: #fff;
+  text-decoration: none; font-size: 13px;
+  font-weight: 600; white-space: nowrap;
+  transition: background 0.2s; flex-shrink: 0;
+}
+.book-btn:hover { background: var(--accent2); }
+
+/* PORTFOLIO GRID */
+.pgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 80px;
+}
+
+/* CARD */
+.pcard {
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  opacity: 0; transform: translateY(20px);
+}
+.pcard.vis {
+  animation: fadeUp 0.4s ease forwards;
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.pcard:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-border);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+}
+.pcard-top {
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+.pcard-body { padding: 22px 22px 16px; }
+.pcard-meta {
+  display: flex; align-items: center;
+  gap: 8px; margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.pseg {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 1px;
+  color: var(--accent); text-transform: uppercase;
+  padding: 3px 10px; border-radius: 100px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+}
+.pfmt {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.ptitle {
+  font-size: 15px; font-weight: 600;
+  line-height: 1.4; color: var(--text);
+  margin-bottom: 10px;
+}
+.ppreview {
+  font-size: 13px; line-height: 1.7;
+  color: var(--muted2);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.pcard-foot {
+  padding: 12px 22px;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center;
+  justify-content: space-between;
+}
+.pcta {
+  font-size: 12px; font-weight: 500;
+  color: var(--accent);
+  display: flex; align-items: center; gap: 4px;
+}
+.parr { transition: transform 0.2s; }
+.pcard:hover .parr { transform: translateX(4px); }
+
+/* MODAL */
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 900; display: none;
+  align-items: center; justify-content: center;
+  padding: 20px; backdrop-filter: blur(6px);
+}
+.overlay.open { display: flex; }
+.modal {
+  background: var(--s1);
+  border: 1px solid var(--border2);
+  border-radius: 18px;
+  max-width: 660px; width: 100%;
+  max-height: 88vh; overflow-y: auto;
+  animation: mIn 0.22s ease;
+}
+@keyframes mIn {
+  from { opacity: 0; transform: scale(0.96) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.mhead {
+  padding: 26px 28px 18px;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0;
+  background: var(--s1); z-index: 2;
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 14px;
+}
+.mmeta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.mtitle {
+  font-size: 18px; font-weight: 600;
+  color: var(--text); line-height: 1.35;
+}
+.mclose {
+  width: 30px; height: 30px; border-radius: 8px;
+  border: 1px solid var(--border2);
+  background: var(--s2); color: var(--muted2);
+  cursor: pointer; font-size: 14px;
+  display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0;
+  transition: all 0.15s;
+}
+.mclose:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.mbody {
+  padding: 22px 28px 32px;
+  font-size: 14px; line-height: 1.9;
+  color: var(--muted2);
+}
+.mcontext {
+  background: var(--s2);
+  border-radius: 10px; padding: 14px 18px;
+  margin-bottom: 22px; font-size: 13px;
+  line-height: 1.7; color: var(--muted2);
+  border-left: 3px solid var(--accent);
+}
+.mcontext strong { color: var(--text); }
+.mfull { white-space: pre-wrap; color: var(--text); font-size: 14px; line-height: 1.9; }
+
+/* FADE IN */
+.fade { opacity: 0; transform: translateY(16px); animation: fadeUp 0.5s ease forwards; }
+
+@media (max-width: 700px) {
+  .header-inner { grid-template-columns: 1fr; }
+  .hero-number { display: none; }
+  .pgrid { grid-template-columns: 1fr; }
+  .book-card { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+
+<div class="wrap">
+  <header>
+    <div class="header-inner">
+      <div class="fade" style="animation-delay:0.05s">
+        <span class="hero-tag">Portfólio · Copywriting & Estratégia de Conteúdo</span>
+        <h1 class="hero-name">
+          Jairo
+          <span class="line2">Neri</span>
+        </h1>
+        <div class="hero-title">Copywriter & Estrategista de Conteúdo</div>
+        <p class="hero-desc">Escrevo com cabeça de quem entende negócio. Textos que vendem, engajam e constroem autoridade — para marcas em diferentes segmentos e formatos.</p>
+        <div class="hero-tags">
+          <span class="htag">Copywriting</span>
+          <span class="htag">VSL</span>
+          <span class="htag">E-mail Marketing</span>
+          <span class="htag">SEO</span>
+          <span class="htag">Storytelling</span>
+          <span class="htag">Roteiros</span>
+        </div>
+        <div class="hero-contact">
+          <span>📍 Feira de Santana, Bahia</span>
+          <span>✉ <a href="mailto:jjvneri@gmail.com">jjvneri@gmail.com</a></span>
+          <span>📱 <a href="https://wa.me/5575991001828">+55 75 99100-1828</a></span>
+          <span>🔗 <a href="https://linkedin.com/in/jairo-neri" target="_blank">linkedin.com/in/jairo-neri</a></span>
+        </div>
+      </div>
+      <div class="hero-number fade" style="animation-delay:0.15s">
+        <div class="num-sep"></div>
+        <div class="num-val">13</div>
+        <div class="num-label">anos de<br>experiência</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="section-div fade" style="animation-delay:0.2s">
+    <div class="div-line"></div>
+    <span class="div-label">Publicação</span>
+    <div class="div-line"></div>
+  </div>
+
+  <div class="book-card fade" style="animation-delay:0.25s">
+    <img src="data:image/png;base64,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" style="width:80px;height:auto;object-fit:contain;flex-shrink:0;border-radius:6px;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.5))" alt="Capa do livro Quem é Você Alice">
+    <div class="book-info">
+      <div class="book-lbl">Livro publicado · Dark Thriller</div>
+      <div class="book-title">Quem é Você, Alice?</div>
+      <div class="book-desc">Romance dark thriller publicado na Amazon. Suspense psicológico com personagens densos e construção de tensão gradual.</div>
+    </div>
+    <a href="https://www.amazon.com.br/dp/B0F9LS26R1" target="_blank" class="book-btn">Ver na Amazon →</a>
+  </div>
+
+  <div class="section-div fade" style="animation-delay:0.3s">
+    <div class="div-line"></div>
+    <span class="div-label">Peças de Copy</span>
+    <div class="div-line"></div>
+  </div>
+
+  <div class="pgrid" id="grid"></div>
+</div>
+
+<div class="overlay" id="overlay" onclick="handleOv(event)">
+  <div class="modal" id="modal-box">
+    <div class="mhead">
+      <div>
+        <div class="mmeta" id="mmeta"></div>
+        <div class="mtitle" id="mtitle"></div>
+      </div>
+      <button class="mclose" onclick="closeModal()">✕</button>
+    </div>
+    <div class="mbody">
+      <div class="mcontext" id="mctx"></div>
+      <div class="mfull" id="mfull"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const pieces = [
+  {seg:'Educação & Saúde', fmt:'Storytelling · Página de Vendas',
+    title:'Narrativa de transformação — jornada da terapeuta',
+    ctx:'Storytelling longo em primeira pessoa para página de vendas. Personagem real, conflito (pandemia, desemprego, dívidas), virada (curso online) e resolução (nova carreira + amor). Técnica de identificação emocional com o leitor-avatar.',
+    preview:'A minha vida era nada mais que normal. Sempre fui mediana em tudo que fiz e nunca me destaquei em nada que me propunha a fazer. Vivia cansada e minha única diversão era aos finais de semana...',
+    full:`A minha vida era nada mais que normal. Sempre fui mediana em tudo que fiz e nunca me destaquei em nada que me propunha a fazer. Passei assim a maior parte dos meus dias, mas sempre trabalhei muito. Já fui babá, empregada, trabalhei em fábrica e no comércio como vendedora. Vivia cansada e minha única diversão era aos finais de semana, quando minha família se juntava para um churrasco na frente de casa.
+
+Assim os anos se passaram e cheguei aos meus 37 anos. Muito cansada, sem nunca ter vivido um amor real. Sem nunca pensar que eu poderia mudar a vida de alguém, de nenhuma forma.
+
+[A pandemia acertou em cheio o comércio onde trabalhava. Fui posta pra fora. Minha rescisão não foi paga e me vi sem chão, sem ter como me manter.]
+
+Foi quando me deparei com a solução definitiva dos meus problemas. No meio do caos uma nova possibilidade de carreira surgiu. Logo me vi fazendo um curso online de Auriculoterapia pelo Instituto RS.
+
+A instituição me fez mudar. Tive todo o incentivo e acompanhamento para me tornar uma profissional preparada. Fui inserida em uma comunidade única de estudantes. Se tinha alguma dúvida, poderia tirar com meus colegas. Essa comunidade me moldou, me deixou mais leve e com maior certeza de um futuro promissor.
+
+Para fazer esse curso tive que tomar uma decisão muito difícil — pagar por ele significava uma conta a menos paga no fim do mês. A conta escolhida foi o aluguel. Arrisquei meu teto para tentar um futuro melhor.
+
+E a vida mudou completamente. Consegui pagar o aluguel de minha casa já na primeira semana de atendimentos!
+
+Depois disso o boca a boca me trouxe mais clientes. Até mesmo porque fazia questão de atender a todos com um sorriso no rosto.
+
+Foi quando um cliente especial entrou na minha sala. Eduardo, 42 anos, divorciado e lindo. Minha ética me fez tratá-lo como todos os clientes. Mas ele só era sorrisos pro meu lado.
+
+Hoje já sonhamos com viagens. Me sinto outra mulher! Sem medo de me entregar ao que a vida pode me dar. Isso tudo por ter decidido fazer o curso de Auriculoterapia no Instituto RS.
+
+Só tenho a agradecer! A tudo!`
+  },
+  {seg:'Estética', fmt:'Anúncio · Prova Social',
+    title:'Anúncio com prova social para curso de design de sobrancelhas',
+    ctx:'Copy curta para anúncio pago do Studio Geisa Peixinho. Estratégia de prova social com foto de alunas certificadas, apelo à identificação e CTA de urgência.',
+    preview:'Olha só essa turma linda de mulheres realizadas ao lado da Geisa Peixinho com seus certificados!\n\nElas concluíram o curso de Design em Sombrancelhas e agora você também tem a oportunidade!',
+    full:`Olha só essa turma linda de mulheres realizadas ao lado da Geisa Peixinho com seus certificados!
+
+Elas concluíram o curso de Design em Sombrancelhas e agora você também tem a oportunidade de conseguir o mesmo certificado que elas conquistaram!
+
+Geisa Peixinho abriu vagas para um dos cursos mais completos no mercado para quem quer trabalhar ou empreender na área da estética facial!
+
+Curso de Design em Sobrancelhas do Studio Geisa Peixinho!
+
+Seja você também uma das próximas alunas que hoje estão super satisfeitas!
+
+Clica no botão pra saber das condições especiais que preparamos pra você!`
+  },
+  {seg:'Educação & Saúde', fmt:'VSL · Vídeo de Vendas Longo',
+    title:'VSL completa para curso de auriculoterapia',
+    ctx:'Video Sales Letter longa para curso online do Instituto RS. Estrutura com jornada do herói do fundador, prova social, ancoragem de preço (R$1.051 por R$247) e garantia de 30 dias.',
+    preview:'QUER UMA SOLUÇÃO PERFEITA PARA GANHAR MUITO MAIS COMPLEMENTANDO SUA PROFISSÃO?\n\nVOCÊ ESTÁ FAZENDO ISSO ERRADO!\n\nPor acaso você já teve que ficar pensando em o que fazer para captar mais clientes?',
+    full:`QUER UMA SOLUÇÃO PERFEITA PARA GANHAR MUITO MAIS COMPLEMENTANDO SUA PROFISSÃO UTILIZANDO AS TERAPIAS INTEGRATIVAS E COMPLEMENTARES?
+
+VOCÊ ESTÁ FAZENDO ISSO ERRADO!
+
+Por acaso você já teve que ficar pensando em o que fazer para captar mais clientes, ou fazer os atuais clientes contratarem mais sessões?
+
+Então já tá na hora de você saber a verdade que os maiores profissionais do mercado tem de diferencial e não contam!
+
+O segredo para cativar os clientes aplicando técnicas durante todo o contato com eles, ao ponto de quererem sempre mais sessões — que realmente funciona, engaja, cria autoridade e gera um real desejo pelo que você oferece!
+
+Uma certeza: o segredo não é entregar "tudo" no seu primeiro atendimento gratuito!
+
+Meu nome é Danilo Valle e há alguns anos provavelmente eu era como você. Antes de 2014 comecei a desenvolver o que viria a ser a maior escola de Terapias Integrativas e Complementares da América Latina, o Instituto RS, com técnicas sendo aplicadas por nossos alunos em mais de 11 países.
+
+Comecei com bastante dificuldade. Minha empresa anterior havia quebrado me deixando uma dívida na casa das centenas de milhares de reais. Precisei criar um negócio do zero, devendo na praça. Eu não tinha um plano B. Mas tinha minha família como combustível.
+
+Depois de muito estudo e testes, descobri o verdadeiro segredo: cativar o cliente desde o primeiro contato, construindo um vínculo emocional em todos os âmbitos — inclusive nas redes sociais.
+
+O resultado? A procura pelas sessões simplesmente explodiu.
+
+POR APENAS R$247,00!
+[Ancoragem de R$1.051,00 com lista completa de bônus]
+
+Você tem Garantia de 30 dias. Se não gostar, devolvemos seu dinheiro e você ainda fica com o bônus de Controle de Atendimento.
+
+Ou seja: se gostar, fica conosco e sai ganhando. Se não gostar, recebe o dinheiro de volta e sai ganhando!`
+  },
+  {seg:'Educação', fmt:'Roteiro · Emocional com Direção de Tom',
+    title:'Roteiro emocional com direção de tom para escola de reforço escolar',
+    ctx:'Roteiro para vídeo da Private English Classes com indicação de tom em cada bloco — sério, leve e animado. Trabalha a dor do pai (filho em recuperação) e transforma em oportunidade, com CTA para Direct ou WhatsApp.',
+    preview:'[Tom sério]\nOlha, eu sei que você, pai e mãe, se preocupa muito com o futuro do seu filho, de sua filha. E sei também que receber a notícia que ele está em recuperação, não é lá o melhor dos mundos.',
+    full:`[Tom sério]
+Olha, eu sei que você, pai e mãe, se preocupa muito com o futuro do seu filho, de sua filha.
+E sei também que receber a notícia que ele está em recuperação, não é lá o melhor dos mundos.
+
+[Tom leve]
+Mas eu quero que você saiba que isso pode ser transformado em sucesso!
+
+É exatamente essa a oportunidade que você e seu brilhante estudante tem de reformular o caminho do sucesso ainda nesse ano letivo.
+
+[Tom animado]
+A Private English Classes é o apoio pedagógico ideal.
+
+Tanto para o estudante que tem dificuldades com a matéria de Inglês, quanto para quem tem dificuldade com o Português.
+
+E eu posso garantir que já presenciei a preocupação dos pais se transformarem em lágrimas de orgulho dezenas de vezes.
+
+Isso porque nossa didática é pensada para cada aluno individualmente, com aulas personalizadas e — claro — com nossa vasta experiência.
+
+Por isso, te faço o convite para que você assista a transformação do seu filho!
+
+Nos permita fazer parte dessa transformação!
+
+Nos envie um Direct, ou clique no botão de WhatsApp no nosso perfil!
+
+Estamos te esperando.`
+  },
+  {seg:'Educação & Saúde', fmt:'Campanha de E-mails · Multi-framework',
+    title:'Campanha de natal — 6 e-mails com frameworks DBO e AIDA',
+    ctx:'Campanha de e-mail marketing para promoção de carteirinha profissional. Seis versões usando frameworks distintos: DBO (Desejo, Benefício, Oferta), AIDA e O que/Como/Por que. Demonstra domínio de múltiplas estruturas de persuasão.',
+    preview:'Framework DBO — O Apoio que você precisava para 2022!\n\nD: Você está prestes a se livrar de dúvidas e problemas relacionados a sua atuação profissional...',
+    full:`FRAMEWORK DBO — Título: O Apoio que você precisava para 2022!
+
+D (Desejo):
+Você está prestes a se livrar de dúvidas e problemas relacionados a sua atuação profissional.
+
+Imagine poder trabalhar contando com um grupo para te salvar em um momento de dúvida. Ou sempre ter imagens para movimentar as suas redes sociais e captar mais clientes. Ou ter todo o apoio jurídico em caso de alguém tentar impedir que você exerça a sua profissão de terapeuta.
+
+B (Benefício):
+Pois isso está ao seu alcance agora mesmo! E você ainda terá o seu Número de Registro Profissional de Terapeuta! Estou falando da Carteirinha Virtual do Instituto RS.
+
+O (Oferta):
+Nesse Natal temos uma oferta especial. Além do Registro, do Apoio Jurídico e do Suporte Diferenciado, você leva mais de 10 bônus em cursos e materiais. Tudo que custaria R$1.254,70 por apenas R$97,00.
+
+---
+
+FRAMEWORK AIDA — Título: O Instituto RS está realizando um desejo de Natal!
+
+A (Atenção):
+Já imaginou trabalhar de forma despreocupada sabendo que terá todo o suporte jurídico quando necessário? Ou contar com um grupo exclusivo para tirar dúvidas e auxiliar outros terapeutas?
+
+I (Interesse):
+Muito provavelmente você já ouviu da necessidade de ter um Número de Registro para ter uma segurança a mais na atuação de terapeuta. Agora imagine se com esse Número você tivesse acesso a Descontos Exclusivos, Cursos Profissionalizantes GRATUITOS, Suporte Diferenciado e Apoio Jurídico.
+
+D (Desejo):
+É algo simplesmente fantástico — e agora é REAL!
+[Lista completa de bônus com ancoragem de R$1.254,70 por R$97,00]
+
+A (Ação):
+Essa oferta tem tempo e vagas limitados! Clica no link e desfrute desse Mega Presente de Natal!
+
+---
+
+FRAMEWORK O QUE / COMO / POR QUÊ
+
+O QUE: O Instituto RS tem o prazer em trazer a maior oferta do ano para você. Um verdadeiro presente de Natal que fará você ter grandes oportunidades já no início do ano.
+
+COMO: Registro Profissional + 50% de desconto em novos cursos + Apoio Jurídico + Suporte Diferenciado + mais de 10 bônus em cursos e materiais.
+
+POR QUÊ: Porque nós do Instituto RS prezamos pelo cuidado do terapeuta. Queremos você conosco transformando o mundo. E sabemos que você merece esse presente! Mas corra — oferta por tempo limitado!`
+  },
+  {seg:'Saúde Médica', fmt:'Texto Institucional · Biografia',
+    title:'Biografia institucional para ortopedista aprovado em 1º lugar nacional',
+    ctx:'Copy biográfica para perfil digital de médico especialista. Tom de autoridade com conquistas verificáveis — aprovação em 1º lugar nacional na prova da SBOT/UNIFESP. Construída para gerar confiança imediata no paciente.',
+    preview:'Sou natural de Salvador, na Bahia. Fiz a minha formação médica na Universidade Estadual de Feira de Santana. Em busca da especialização, fui aprovado nos maiores serviços do país...',
+    full:`Quem é Dr. Bernardo Crisostomo
+Ortopedista e Traumatologista — Membro titular da SBOT
+
+Trajetória
+
+Sou natural de Salvador, na Bahia. Fiz a minha formação médica na conceituada Universidade Estadual de Feira de Santana, escola pública com mais de 40 anos de história, na maior cidade do interior do Nordeste.
+
+Em busca da especialização em Ortopedia, fui aprovado nos maiores serviços do país: INTO (Rio de Janeiro), Santa Casa-SP, UNICAMP, USP e na Universidade Federal de São Paulo / Escola Paulista de Medicina (UNIFESP/EPM). Foi nesta última que segui minha residência, formando-me Ortopedista e Traumatologista junto a grandes nomes do cenário nacional.
+
+Formações e Conquistas
+
+Em 2021 tive a minha principal conquista: fui aprovado em 1º Lugar — em todo o país — na prova de Título de Especialista em Ortopedia e Traumatologia da SBOT, pela UNIFESP. Considerada uma das mais difíceis provas de título entre as especialidades médicas.
+
+Atualmente atuo como Ortopedista Geral com total foco no atendimento humanizado, e como Fellow em Ortopedia Oncológica pela UNIFESP, trabalhando em grandes centros oncológicos como GRAACC, Einstein e IBCC.
+
+[Locais de atendimento omitidos a pedido do cliente]`
+  },
+  {seg:'Educação & Saúde', fmt:'Copy de Vendas · E-book',
+    title:'Persuasão direta para e-book de auriculoterapia',
+    ctx:'Página de vendas para e-book do Instituto RS. Objetivo: converter visitantes quebrando objeções de preço e gerando urgência. Produto: R$49,90.',
+    preview:'Você só tem vantagens aqui.\n\nMas por que tão barato? Qual a pegadinha?\n\nNão tem pegadinha!',
+    full:`Você só tem vantagens aqui.
+
+Mas por que tão barato? Qual a pegadinha?
+
+Não tem pegadinha!
+
+É Simples... Primeiro, porque eu realmente quero que você experimente ver como a sua forma de receber seu cliente vai mudar completamente e como a sua agenda vai começar a encher!
+
+Quero que você entenda que eu realmente me importo com seu resultado e não quero ninguém tendo tanta dificuldade nas terapias integrativas e complementares como eu tive lá atrás.
+
+"MAS SERÁ QUE É BOM? É TÃO BARATO!"
+
+Essa frase pode até fazer sentido para outras coisas na vida, menos para esse e-Book.
+
+Para ter acesso ao conteúdo que coloquei nesse e-Book, você teria que entrar em dezenas de outros cursos e especializações. Mas você terá acesso por ridículos R$49,90. Depois, você vai querer me agradecer.
+
+Só que você precisa agir agora!
+
+Porque quanto mais tempo você passa sem mudar a vida de seus clientes, ou sofrendo para achar o preço certo a cobrar, mais tempo você continua sem crescer. E você quer continuar assim por mais quanto tempo?
+
+"De quais resultados estamos falando?"
+
+Para alguns é liberdade! Para outros, um carro novo ou uma casa nova. Para outros, levar sua mensagem ao mundo. Ou simplesmente ter mais tempo para ficar com a família.
+
+E tudo isso vale muito mais do que R$49,90, não é mesmo?
+
+SÓ R$49,90! Clica no botão para garantir esse preço hoje!
+
+Esta é uma OFERTA ESPECIAL que pode ser encerrada a qualquer momento.`
+  },
+  {seg:'Mentalidade', fmt:'Post · Instagram',
+    title:'Copy filosófica com gancho provocativo para redes sociais',
+    ctx:'Post para Instagram com gancho filosófico, desenvolvimento de argumento e CTA para bio. Técnica de inversão de crença — questiona o que o leitor acredita sobre dinheiro para criar abertura mental.',
+    preview:'Não é sobre dinheiro!\n\nVocê tem que entender isso o mais rápido possível! É sobre o que você almeja conquistar. É sobre abundância em todas as áreas da vida...',
+    full:`Não é sobre dinheiro!
+
+Você tem que entender isso o mais rápido possível! É sobre o que você almeja conquistar. É sobre abundância em todas as áreas da vida. É sobre estar conectado com o universo e receber o melhor que ele tem a oferecer.
+
+Se para você alcançar os objetivos precisar de dinheiro, você o conquistará. Não troque a ferramenta pela meta. Dinheiro nada mais é que uma mera ferramenta para suas conquistas.
+
+Convido você a fazer um pequeno exercício: Pergunte-se para que você quer enriquecer. Se a resposta for vaga, ter por ter, ou sem um objetivo extremamente claro — é um sinal definitivo que você não está alinhado ao crescimento e à plenitude!
+
+Estando no caminho errado, conheça o Mentalidade Milionária. Estando no caminho certo e querendo catalisar seus resultados, conheça o Mentalidade Milionária!
+
+Link na Bio.`
+  },
+  {seg:'Saúde · Seguros', fmt:'Roteiro · Vídeo Educativo',
+    title:'Roteiro educativo sobre contratação de planos de saúde',
+    ctx:'Roteiro para vídeo educativo sobre planos de saúde coletivos e individuais. Tom próximo e desmistificador, voltado para pessoa física sem conhecimento técnico. Finaliza com CTA para contato direto.',
+    preview:'Fala, meus lindos e minhas lindas!\n\nHoje eu quero bater um papo sobre o momento em que você vai decidir qual será o seu anjo guardião no momento em que mais precisar.',
+    full:`Fala, meus lindos e minhas lindas!
+
+Hoje eu quero bater um papo sobre o momento em que você vai decidir qual será o seu anjo guardião no momento em que mais precisar. Ou seja, vamos falar sobre contratação de planos de Saúde!
+
+Então escuta tudinho que no final tem a melhor das dicas!
+
+Você sabe o que pode te impedir de contratar um plano de saúde?
+
+No geral, planos de saúde podem ser contratados por pessoas físicas ou jurídicas. Porém, o mercado está cada vez mais restrito para alguns tipos de contratação.
+
+Há pouco tempo atrás era fácil encontrar operadoras de saúde que faziam contrato direto para pessoas físicas com planos individuais e familiares. Mas essa possibilidade está cada vez mais restrita.
+
+Pra suprir essa demanda surgiram os planos oferecidos por entidades de classes ou categorias profissionais. Como funciona? Simples. Digamos que você é um empregado do comércio. Uma associação vinculada ao setor cria uma apólice de seguro e todos os funcionários com interesse podem aderir.
+
+Outra forma é por Pessoa Jurídica. Mais opções, mas para contratar um plano PJ temos que ter no mínimo duas vidas e um CNPJ ou Caepf.
+
+Muitos detalhes técnicos? Não, não... pode ficar tranquilo. Esse bate papo de hoje é apenas para dizer que temos diversas formas de contratar um plano de saúde, e a parte técnica deixa comigo. O que você precisa é apenas me chamar e vamos achar a opção que melhor se encaixe para você, seja PF ou PJ.`
+  },
+  {seg:'Educação & Saúde', fmt:'E-mail · Pós-venda com Upsell',
+    title:'E-mail de entrega de certificado com oferta de afiliação',
+    ctx:'E-mail de relacionamento pós-conclusão de curso. Upsell embutido na entrega do certificado — momento de maior engajamento emocional do aluno. Oferta de afiliação com desconto especial.',
+    preview:'Parabéns pra você, nesta data querida!\n\nTudo bem... Sabemos que não é seu aniversário mas hoje é um dia especial para você e para nós! Sabe por quê?\n\nPorque seu certificado de Terapeuta está pronto!',
+    full:`Parabéns pra você, nesta data querida!
+
+Tudo bem... Sabemos que não é seu aniversário mas hoje é um dia especial para você e para nós! Sabe por quê?
+
+Porque seu certificado de Terapeuta está pronto!
+
+Agora, oficialmente você é um(a) Terapeuta formado(a) pelo Instituto RS e está plenamente apto(a) a ajudar muitas pessoas com suas habilidades.
+
+Aqui está seu certificado! [FOTO DO CERTIFICADO]
+
+É lindo não é?
+
+Para ficar registrado, mandamos também pelo seu e-mail. Caso queira uma versão impressa, basta nos avisar. O custo de confecção e envio é de R$ 49,90, mas caso você queira registrar sua nova profissão e for fazer o Registro de Terapeuta para ter acesso à nossa carteirinha, este valor pode cair caso você se torne afiliado(a).
+
+Por falar nisso, caso você queira fazer hoje mesmo a afiliação, você ganha um super desconto na primeira anuidade. De R$ 200,00, você poderá pagar apenas R$ 100,00, já com o envio da carteirinha incluso!
+
+É uma excelente oportunidade para você entrar de vez no mundo das Terapias!
+
+Parabéns pela conquista, desejamos muito sucesso e esperamos que você esteja sempre se capacitando com os nossos cursos.
+
+Ah! Se quiser tirar uma foto segurando o seu certificado, podemos colocar no nosso site e mostrar para todos que você "Chegou para ficar"!`
+  },
+  {seg:'Decoração · E-commerce', fmt:'Roteiro · Vídeo Promocional',
+    title:'Roteiro promocional de 20% off para loja de quadros',
+    ctx:'Roteiro estruturado por tópicos para vídeo promocional da Domani Decor. Cinco blocos: gancho, apresentação, promoção, bônus frete e CTA. Tom próximo e festivo para campanha sazonal.',
+    preview:'Essa é a oportunidade de você deixar sua sala muito mais bonita!\n\nOi, eu sou a Karol da Domani Decor e estou com uma super novidade para o mês de setembro, o nosso mês da Cliente!',
+    full:`Essa é a oportunidade de você deixar sua sala muito mais bonita!
+
+Oi, eu sou a Karol da Domani Decor e estou com uma super novidade para o mês de setembro, o nosso mês da Cliente!
+
+Todo o site da Domani Decor está com 20% de desconto! São 20% de desconto para qualquer quadro que você comprar através de nosso site utilizando o cupom 20off!
+
+E temos um presentinho a mais: O frete para a Bahia é grátis nas compras acima de 799 reais.
+
+Fala aí se não caprichamos na promoção! E caprichamos pra você! Todo o site 20% off mais frete grátis pra Bahia!
+
+Agora corre, que possivelmente essa promoção não vai durar o mês todo!
+
+Clica no botão OBTER OFERTA e utiliza o cupom 20off ao finalizar a sua compra.
+
+A Domani Decor quer ver sua sala, seu quarto, o seu canto especial, muito mais lindo!`
+  },
+  {seg:'Educação & Saúde', fmt:'Descrição · YouTube',
+    title:'Descrição de vídeo com links e CTAs para canal do Instituto RS',
+    ctx:'Descrição otimizada para vídeos do canal do Instituto RS no YouTube. Estrutura com vídeos sugeridos, links do ecossistema digital (blog, Instagram, canal) e CTA de engajamento.',
+    preview:'Vídeos sugeridos:\n► Instituto RS transforma #1\n► Como diminuir em 90% as dores — Método Comprovado através dos fundamentos da MTC\n\nBlog Oficial: blog.institutors.org',
+    full:`🎥 Vídeos sugeridos:
+► Instituto RS transforma #1 — Instituto RS
+► Como diminuir em 90% as dores — Método Comprovado através dos fundamentos da MTC — Instituto RS
+
+💻 Blog Oficial: blog.institutors.org
+📱 Instagram Oficial: @terapias.integrativas.irs
+
+✅ Gostou do vídeo?
+✍ Deixe seu comentário!
+► Inscreva-se no Canal
+📢 Compartilhe com os amigos este vídeo`
+  }
+];
+
+
+function build() {
+  const grid = document.getElementById('grid');
+  pieces.forEach((p, i) => {
+    const c = document.createElement('div');
+    c.className = 'pcard';
+    c.style.animationDelay = (i * 0.05) + 's';
+    c.innerHTML = `
+      <div class="pcard-top"></div>
+      <div class="pcard-body">
+        <div class="pcard-meta">
+          <span class="pseg">${p.seg}</span>
+          <span class="pfmt">${p.fmt}</span>
+        </div>
+        <div class="ptitle">${p.title}</div>
+        <div class="ppreview">${p.preview}</div>
+      </div>
+      <div class="pcard-foot">
+        <span class="pcta">Ver peça completa <span class="parr">→</span></span>
+      </div>`;
+    c.addEventListener('click', () => open(p));
+    grid.appendChild(c);
+  });
+  const obs = new IntersectionObserver(es => {
+    es.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); });
+  }, {threshold:0.08});
+  document.querySelectorAll('.pcard').forEach(c => obs.observe(c));
+}
+
+function open(p) {
+  document.getElementById('mmeta').innerHTML =
+    `<span class="pseg">${p.seg}</span><span class="pfmt" style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">${p.fmt}</span>`;
+  document.getElementById('mtitle').textContent = p.title;
+  document.getElementById('mctx').innerHTML = `<strong>Contexto:</strong> ${p.ctx}`;
+  document.getElementById('mfull').textContent = p.full;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOv(e) { if(e.target === document.getElementById('overlay')) closeModal(); }
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+build();
+</script>
+</body>
+</html>
